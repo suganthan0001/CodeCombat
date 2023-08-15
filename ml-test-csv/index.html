@@ -1,0 +1,105 @@
+<label for="idInput">Enter ID:</label>
+<input type="text" id="idInput">
+<script src="fetchDetails.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+label {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#detailsSection {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h2, h3 {
+    color: #495057;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+canvas {
+    max-width: 100%;
+    background-color: #f8f9fa;
+}
+
+    </style>
+<button onclick="fetchDetails()">Fetch Details</button>
+
+<div id="detailsSection" style="display:none;">
+    <h2>Details:</h2>
+    <p><strong>Approval Status:</strong> <span id="label"></span></p>
+    <p><strong>ID:</strong> <span id="id"></span></p>
+    <p><strong>Feature 1:</strong> <span id="fea_1"></span></p>
+    <p><strong>Feature 2:</strong> <span id="fea_2"></span></p>
+    <p><strong>Feature 3:</strong> <span id="fea_3"></span></p>
+    <p><strong>Feature 4:</strong> <span id="fea_4"></span></p>
+    <p><strong>Feature 5:</strong> <span id="fea_5"></span></p>
+    <p><strong>Feature 6:</strong> <span id="fea_6"></span></p>
+    <p><strong>Feature 7:</strong> <span id="fea_7"></span></p>
+    <p><strong>Feature 8:</strong> <span id="fea_8"></span></p>
+    <p><strong>Feature 9:</strong> <span id="fea_9"></span></p>
+    <p><strong>Feature 10:</strong> <span id="fea_10"></span></p>
+    <p><strong>Feature 11:</strong> <span id="fea_11"></span></p>
+    <p><strong>OVD_t1:</strong> <span id="OVD_t1"></span></p>
+    <p><strong>OVD_t2:</strong> <span id="OVD_t2"></span></p>
+    <p><strong>OVD_t3:</strong> <span id="OVD_t3"></span></p>
+    <p><strong>OVD_sum:</strong> <span id="OVD_sum"></span></p>
+    <p><strong>Pay Normal:</strong> <span id="pay_normal"></span></p>
+    <p><strong>Product Code:</strong> <span id="prod_code"></span></p>
+    <p><strong>Product Limit:</strong> <span id="prod_limit"></span></p>
+    <p><strong>Update Date:</strong> <span id="update_date"></span></p>
+    <p><strong>New Balance:</strong> <span id="new_balance"></span></p>
+    <p><strong>Highest Balance:</strong> <span id="highest_balance"></span></p>
+    <p><strong>Report Date:</strong> <span id="report_date"></span></p>
+
+    <!-- <h3>Visual Chart:</h3> 
+        <canvas id="visualChart" width="400" height="200"></canvas> -->
+    <h3>Visualizations:</h3>
+        <div>
+        <canvas id="barChart" width="400" height="200"></canvas>
+        </div>
+        <div>
+        <canvas id="scatterPlot" width="400" height="200"></canvas>
+        </div>
+</div>
+

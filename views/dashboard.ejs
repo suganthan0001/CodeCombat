@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dashboard.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;800&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="sidebar">
+    <button class="sidebar-button" onclick="showAbout()"><strong>ABOUT</strong></button>
+    <button class="sidebar-button" onclick="showCreditHistory()"><strong>Credit History</strong></button>
+    <button class="sidebar-button" onclick="showPurchaseHistory()"><strong>Purchase History</strong></button>
+    <button class="sidebar-button" onclick="location.href='https\://google.com';"><strong>Check Risk
+        Status</strong></button>
+  </div>
+  <div class="content">
+    <div id="about-section" class="section">
+      <div class="about-card">
+        <h2 class="section-title">About</h2>
+        <div class="about-details">
+          <div class="detail">
+            <span class="label">Account Holder Name:</span>
+            <span class="value">
+              <%= user.name %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Age:</span>
+            <span class="value">
+              <%= user.age %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Date of Birth:</span>
+            <span class="value">
+              <%= user.dob %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Address:</span>
+            <span class="value">
+              <%= user.address %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Type of Business:</span>
+            <span class="value">
+              <%= user.typeOfBusiness %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Date of Registration:</span>
+            <span class="value">
+              <%= user.dateOfRegistered %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Registered Mobile Number:</span>
+            <span class="value">
+              <%= user.dateOfRegistered %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Account Type:</span>
+            <span class="value">
+              <%= user.accountType %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Account Balance:</span>
+            <span class="value">
+              <%= user.accountBalance %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">FD link: </span>
+            <span class="value">
+              <%= user.fdLink %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Total Balance:</span>
+            <span class="value">
+              <%= user.totalBalance %>
+            </span>
+          </div>
+          <div class="detail">
+            <span class="label">Nomination:</span>
+            <span class="value">
+              <%= user.nomination %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="credit-history-section" class="section">
+      <div class="credit-history-card">
+        <h2 class="section-title">Credit History</h2>
+        <table class="credit-history-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Ref.</th>
+              <th>Withdrawals</th>
+              <th>Deposits</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i=0;i<user.transactions.length;i++){ %>
+
+            <tr>
+              <td><%= user.transactions[i].date %></td>
+              <td><%= user.transactions[i].description %></td>
+              <td><%= user.transactions[i].ref %></td>
+              <td>$<%= user.transactions[i].withdrawals %></td>
+              <td><%= user.transactions[i].deposits %></td>
+              <td>$<%= user.transactions[i].balance %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="purchase-history-section" class="section">
+      <canvas id="transactionChart"></canvas>
+    </div>
+  </div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+
+</html>
