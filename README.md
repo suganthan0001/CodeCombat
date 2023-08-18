@@ -1,4 +1,4 @@
-#CREDIT CARD RISK MANAGEMENT
+**CREDIT CARD RISK MANAGEMENT**
 
 Utilizing HTML, CSS, and JavaScript, I developed a frontend website that encompasses a login page tailored for bank employees. 
 Following a successful verification process, employees are seamlessly redirected to a subsequent page. 
